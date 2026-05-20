@@ -90,7 +90,22 @@ h2 {
   width: 100%;
   max-width: 900px;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
-  align-items: flex-start;
+}
+
+
+.container.login-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 90vh;
+}
+
+.login-page .registration-content {
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .image-container {
