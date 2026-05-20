@@ -274,3 +274,139 @@ export async function editarContato() {
     }
   });
 }
+
+
+export function exibirSistema(app) {
+    app.innerHTML = ` <h1>Cadastro de Contato</h1>
+      <div class="registration-content">
+        <div class="image-container">
+          <span class="image-label">Escolha sua foto de perfil</span>
+          <div class="image-preview">
+            <img
+              id="preview-image"
+              src="https://img.freepik.com/psd-gratuitas/renderizacao-3d-do-estilo-de-cabelo-para-o-design-do-avatar_23-2151869121.jpg"
+              alt="Preview da Imagem"
+            />
+          </div>
+          <label for="preview-input" class="btn-upload">Selecionar Foto</label>
+          <input type="file" id="preview-input" accept="image/*" hidden />
+        </div>
+
+        <form
+          class="form-container"
+          aria-label="Formulário de Contato"
+          method="POST"
+        >
+          <div class="form-group">
+            <label for="nome">Nome Completo</label>
+            <input
+              type="text"
+              id="nome"
+              name="nome"
+              placeholder="Digite seu nome completo"
+              required
+              aria-required="true"
+            />
+          </div>
+          <div class="form-group">
+            <label for="celular">Celular</label>
+            <input
+              type="tel"
+              id="celular"
+              name="celular"
+              placeholder="(XX) XXXXX-XXXX"
+              required
+              aria-required="true"
+            />
+          </div>
+          <div class="form-group">
+            <label for="email">E-mail</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="Digite seu e-mail"
+              required
+              aria-required="true"
+            />
+          </div>
+          <div class="form-group">
+            <label for="endereco">Endereço</label>
+            <input
+              type="text"
+              id="endereco"
+              name="endereco"
+              placeholder="Rua, número, bairro"
+              required
+              aria-required="true"
+            />
+          </div>
+          <div class="form-group">
+            <label for="cidade">Cidade</label>
+            <input
+              type="text"
+              id="cidade"
+              name="cidade"
+              placeholder="Digite sua cidade"
+              required
+              aria-required="true"
+            />
+          </div>
+          <button type="submit" class="btn-submit">Salvar Contato</button>
+        </form>
+      </div>
+      <section class="contacts-section">
+        <h2>Contatos Cadastrados</h2>
+        <div id="contacts-list">
+          <!--Contatos cadastrados serão exibidos aqui pelo javascript!-->
+        </div>
+      </section>
+    `
+    registrarContato() /*ativa o evento do formulário*/
+    exibirContatos()   /*carrega os contatos da API*/
+}
+
+
+export function mostrarLogin(app) {
+    app.innerHTML = ` <h1>Acesso ao sistema</h1>
+                  <div class="registration-content">
+          <form class="form-container" aria-label="Formulário de Login" action="index.html">
+          <div class="form-group">
+            <label for="login-email">E-mail</label>
+            <input
+              type="email"
+              id="login-email"
+              name="email"
+              placeholder="Digite seu e-mail"
+              required
+              aria-required="true"
+              autocomplete="off"
+            />
+          </div>
+          <div class="form-group">
+            <label for="login-senha">Senha</label>
+            <input
+              type="password"
+              id="login-senha"
+              name="senha"
+              placeholder="Digite sua senha"
+              required
+              aria-required="true"
+              autocomplete="off"
+            />
+          </div>
+          <button type="submit" class="btn-submit">Logar</button>
+        </form>
+      </div>
+    `
+    const loginForm = app.querySelector(".form-container")
+    if (!loginForm) {
+      console.error("Formulário de login não encontrado")
+      return
+    }
+
+    loginForm.addEventListener("submit", function (event) {
+        event.preventDefault()
+        exibirSistema(app) /*ao fazer login, troca a tela para o CRUD*/
+    })
+}

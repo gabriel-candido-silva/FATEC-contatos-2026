@@ -57,27 +57,29 @@ nav li a:hover {
 }
 
 /* --- Container & Layout --- */
-.container {
+#app {
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 0 20px;
+  gap: 30px;
 }
 
 h1,
 h2 {
   text-align: center;
-  margin-bottom: 24px;
   color: #1a202c;
   font-weight: 700;
 }
 
 h1 {
   font-size: 28px;
+  margin-top: 10px;
 }
 h2 {
   font-size: 24px;
+  margin-bottom: 28px;
 }
 
 /* --- Form & Registration Layout --- */
@@ -93,7 +95,7 @@ h2 {
 }
 
 
-.container.login-page {
+#app {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -101,7 +103,7 @@ h2 {
   min-height: 90vh;
 }
 
-.login-page .registration-content {
+.registration-content {
   max-width: 500px;
   display: flex;
   flex-direction: column;

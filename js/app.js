@@ -1,17 +1,4 @@
-import {
-  registrarContato,
-  exibirContatos,
-  excluirContato,
-  editarContato,
-  preview,
-} from "./contatos.js";
+import {mostrarLogin} from "./contatos.js";
 
-registrarContato();
-
-preview();
-
-exibirContatos();
-
-excluirContato();
-
-editarContato();
+const app = document.getElementById('app')
+mostrarLogin(app);
