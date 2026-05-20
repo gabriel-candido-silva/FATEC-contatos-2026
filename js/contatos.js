@@ -363,7 +363,9 @@ export function exibirSistema(app) {
       </section>
     `
     registrarContato() /*ativa o evento do formulário*/
-    exibirContatos()   /*carrega os contatos da API*/
+    exibirContatos()
+    editarContato()
+    excluirContato()   /*carrega os contatos da API e ja possui todas as requisições do*/
 }
 
 
