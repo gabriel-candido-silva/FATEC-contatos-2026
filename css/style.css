@@ -103,11 +103,16 @@ h2 {
   min-height: 90vh;
 }
 
-.registration-content {
-  max-width: 500px;
+.login-content {
+  width: 100%;
+  max-width: 450px;
   display: flex;
-  flex-direction: column;
   align-items: center;
+  background: white;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+  border-radius: 20px;
+  padding: 40px;
+  gap: 40px;
 }
 
 .image-container {
@@ -249,6 +254,10 @@ h2 {
 }
 .contact-card-style img {
   border-radius: 20px;
+}
+#img-contato {
+    width: 280px;
+    max-height: 250px;
 }
 .contact-card-style p {
   font-size: 14px;

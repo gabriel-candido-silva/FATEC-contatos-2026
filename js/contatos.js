@@ -134,7 +134,7 @@ export async function exibirContatos() {
   contatos.forEach((item) => {
     const cardContato = `<div class="contact-card-style" data-id="${item.id}">
             <h3>${item.nome}</h3>
-            <img
+            <img id = "img-contato"
               src="${item.foto || "https://img.freepik.com/psd-gratuitas/ilustracao-3d-de-avatar-ou-perfil-humano_23-2150671122.jpg"}"
               alt="imagem do contato"
             />
@@ -362,6 +362,7 @@ export function exibirSistema(app) {
         </div>
       </section>
     `
+    preview()
     registrarContato() /*ativa o evento do formulário*/
     exibirContatos()
     editarContato()
@@ -371,7 +372,7 @@ export function exibirSistema(app) {
 
 export function mostrarLogin(app) {
     app.innerHTML = ` <h1>Acesso ao sistema</h1>
-                  <div class="registration-content">
+                  <div class="login-content">
           <form class="form-container" aria-label="Formulário de Login" action="index.html">
           <div class="form-group">
             <label for="login-email">E-mail</label>
